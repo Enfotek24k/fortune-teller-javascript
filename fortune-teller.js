@@ -1,0 +1,37 @@
+/*
+*[First Name]* *[Last Name]* will retire in *[# of years]* with *[bank balance]* in the bank,
+a vacation home in *[location]*, and travel by *[mode of transportation]*.
+*/
+
+
+// Section of code to get user input:
+
+let firstName;
+let lastName;
+let age;
+let birthMonth;
+let favoriteColor;
+let siblingCount;
+
+const updateInputFromFields = () => {
+    firstName = document.querySelector("#first-name").value;
+    lastName = document.querySelector("#last-name").value;
+    age = document.querySelector("#age").value;
+    birthMonth = document.querySelector("#birth-month").value;
+    favoriteColor = document.querySelector("#favorite-color").value;
+    siblingCount = document.querySelector("#sibling-count").value;
+}
+
+// Section of code to determine fortune:
+
+
+
+const updateFortuneText = () => {
+    updateInputFromFields();
+    const fortuneElement = document.querySelector(".fortune-output");
+    fortuneElement.innerText = `${firstName} ${lastName} will retire in....`;
+}
+
+// Wire up button.
+const button = document.querySelector("#determine-fortune");
+button.addEventListener("click", () => updateFortuneText());
